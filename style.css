@@ -1,0 +1,89 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f3f6;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2874f0;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.search {
+  width: 40%;
+  padding: 8px;
+  border: none;
+  border-radius: 2px;
+}
+
+.btn {
+  margin-left: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #fff;
+  color: #2874f0;
+  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.banner {
+  background: url("https://via.placeholder.com/1200x300") no-repeat center center/cover;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.products {
+  padding: 20px;
+}
+
+.product-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.product {
+  background: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product img {
+  max-width: 100%;
+}
+
+.buy-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #2874f0;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.footer {
+  background: #172337;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
