@@ -1,51 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Flipkart Clone</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">Flipkart</div>
-    <input type="text" class="search" placeholder="Search for products, brands and more">
-    <button class="btn">Login</button>
-    <button class="btn">Cart</button>
+  <header class="topbar">
+    <div class="logo"><div class="mark">FK</div><div>Flipkart Clone</div></div>
+    <div class="search" role="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="opacity:.6;margin-right:8px"><path d="M21 21l-4.35-4.35" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <input id="q" placeholder="Search for products, brands and more" />
+      <button class="btn" id="searchBtn">Search</button>
+    </div>
+
+    <div class="actions">
+      <button class="btn">Login</button>
+      <button class="btn">Become a Seller</button>
+      <button class="cart-btn" id="cartToggle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6h15l-1.5 9h-12z" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"></path></svg>
+        <span id="cartCount">0</span>
+      </button>
+    </div>
   </header>
 
-  <section class="banner">
-    <h1>Big Billion Day Sale!</h1>
-  </section>
+  <main class="container">
+    <section class="hero">
+      <div class="banner">
+        <h1>Electronics & More — Big savings</h1>
+        <p>Responsive demo of a Flipkart-like storefront — search, add to cart, and checkout (demo).</p>
+      </div>
+      <aside class="promo">
+        <div class="promo-card">
+          <h3>Deals of the day</h3>
+          <p class="muted">Hot picks for you — auto-generated sample products below.</p>
+        </div>
+      </aside>
+    </section>
 
-  <section class="products">
-    <h2>Top Deals</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="https://via.placeholder.com/150" alt="Product">
-        <h3>Product 1</h3>
-        <p>₹999</p>
-        <button class="buy-btn">Buy Now</button>
+    <section>
+      <div class="filters">
+        <select id="sort" class="pill">
+          <option value="default">Sort: Popular</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+        </select>
+        <select id="category" class="pill">
+          <option value="all">All categories</option>
+          <option value="mobiles">Mobiles</option>
+          <option value="laptops">Laptops</option>
+          <option value="appliances">Appliances</option>
+        </select>
+        <button id="clearFilters" class="pill">Clear</button>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/150" alt="Product">
-        <h3>Product 2</h3>
-        <p>₹1,499</p>
-        <button class="buy-btn">Buy Now</button>
+
+      <div id="products" class="grid" aria-live="polite">
+        
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/150" alt="Product">
-        <h3>Product 3</h3>
-        <p>₹1,299</p>
-        <button class="buy-btn">Buy Now</button>
+    </section>
+  </main>
+
+  <aside id="cart" class="cart-drawer" aria-hidden="true">
+    <h3>Your cart</h3>
+    <div id="cartItems"></div>
+    <div style="border-top:1px solid #eee;padding-top:12px;margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div class="muted">Total</div>
+        <div id="cartTotal" style="font-weight:800;font-size:18px">₹0</div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button id="checkout" class="cart-btn">Checkout</button>
       </div>
     </div>
-  </section>
+  </aside>
 
-  <footer class="footer">
-    <p>&copy; 2025 Flipkart Clone. All Rights Reserved.</p>
-  </footer>
+  <template id="productTpl">
+    <div class="card">
+      <img src="" alt="">
+      <div class="title"></div>
+      <div class="muted desc"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="price">₹0</div>
+        <div class="muted">⭐ <span class="rating">0</span></div>
+      </div>
+      <div class="actions">
+        <button class="btn add">Add to cart</button>
+        <button class="btn">View</button>
+      </div>
+    </div>
+  </template>
 
-  <script src="script.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
